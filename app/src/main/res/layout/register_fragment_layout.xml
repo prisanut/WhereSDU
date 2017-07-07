@@ -1,37 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
+    android:background="@color/colorPrimaryLight"
     android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
-        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:padding="10dp">
-        
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:id="@+id/imvBack"
-                android:src="@mipmap/ic_back"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_back" />
 
             <TextView
-                android:textStyle="bold"
-                android:textColor="@color/textColorPrimary"
-                android:textSize="@dimen/h1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/new_register"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/h1"
+                android:textStyle="bold" />
 
 
         </RelativeLayout>
-        
+
     </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:background="#82ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_name" />
+
+            <EditText
+                android:id="@+id/edtName"
+                android:textColorHint="@color/colorPrimaryLight"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/name"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_user" />
+
+            <EditText
+                android:id="@+id/edtUser"
+                android:textColorHint="@color/colorPrimaryLight"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/user"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_password" />
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:textColorHint="@color/colorPrimaryLight"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/pass"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnNewRegister"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryLight"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/new_register"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+
 
 
 </RelativeLayout>
