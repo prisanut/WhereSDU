@@ -16,6 +16,14 @@ import sdu.mutchima.prisana.wheresdu.R;
 
 public class MainFragment extends Fragment
 {
+    public static MainFragment mainInstance()
+    {
+        MainFragment mainFragment = new MainFragment();
+        Bundle bundle = new Bundle();
+        mainFragment.setArguments(bundle);
+        return mainFragment;
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,
