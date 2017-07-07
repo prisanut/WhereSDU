@@ -7,6 +7,11 @@ package sdu.mutchima.prisana.wheresdu;
 public class MyConstant {
 
     private String urlAddUser = "http://androidthai.in.th/sdu/addDataPris.php";
+    private String urlJSON = "http://androidthai.in.th/sdu/getAllDataPris.php";
+
+    public String getUrlJSON() {
+        return urlJSON;
+    }
 
     public String getUrlAddUser() {
         return urlAddUser;

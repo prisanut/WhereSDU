@@ -76,7 +76,7 @@ public class RegisterFragment extends Fragment {
                if (nameString.length() == 0 || userString.length() == 0 || passwordSting.length() == 0) {
                    //have space
                    MyAlert myAlert = new MyAlert(getActivity());
-                   myAlert.myDialog("Have Space", "Please Fill All Every Blank");
+                   myAlert.myDialog(getString(R.string.title_have), getString(R.string.please_fill));
                } else {
                    //no space
                    uploadValueToServer();
