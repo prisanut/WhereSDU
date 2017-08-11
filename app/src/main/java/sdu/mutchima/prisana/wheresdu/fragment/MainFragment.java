@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -99,16 +100,42 @@ public class MainFragment extends Fragment {
 
             String strJSON = getAllUser.get();
             Log.d(tag, "JSON ==> " + strJSON);
+            boolean status = true; // true --> user false
+            String strID = null;
+            String strName = null;
+            String strPasswordTrue = null;
 
             JSONArray jsonArray = new JSONArray(strJSON);
             for (int i=0; i<jsonArray.length(); i+=1) {
 
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
+                if (strUser.equals(jsonObject.getString("User"))) {
+                    status = false; // user ==> true
+                    strID = jsonObject.getString("id");
+                    strName = jsonObject.getString("Name");
+                    strPasswordTrue = jsonObject.getString("Password");
+
+                } // if
+
+
 
 
             }   // for
 
+            if (status) {
+                // user false
+                MyAlert myAlert = new MyAlert(getActivity());
+                myAlert.myDialog("User False","No this User in my database");
+            } else if (strPassword.equals(strPasswordTrue)) {
+                //password True
+                Toast.makeText(getActivity(), "Welcome" + strName, Toast.LENGTH_SHORT).show();
 
+            } else {
+                //password False
+                MyAlert myAlert = new MyAlert(getActivity());
+                myAlert.myDialog("Password False", "Please try again Password False");
+
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
