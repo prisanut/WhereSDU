@@ -136,7 +136,9 @@ public class MainFragment extends Fragment {
                 //Intent to Service
                 Intent intent = new Intent(getActivity(), ServiceActivity.class);
                 intent.putExtra("ID", strID);
+                intent.putExtra("Name", strName);
                 getActivity().startActivity(intent);
+                getActivity().finish();
 
 
             } else {
