@@ -194,6 +194,13 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
 
         // Check lat, lng != 0
+        createMapAndEditLatLng();
+
+
+    } // on MapReady
+
+    private void createMapAndEditLatLng()
+    {
         while (latADouble == 0)
         {
             myGetLocation();
@@ -203,9 +210,26 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
         LatLng latLng = new LatLng(latADouble, lngADouble);
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
 
+        // Edit LatLng
+        String strID = getIntent().getStringExtra("ID");
+        MyConstant myConstant = new MyConstant();
+        String strURL = myConstant.getUrlEditLatLng();
+
+        try
+        {
+            EditLatLng editLatLng = new EditLatLng(ServiceActivity.this);
+            editLatLng.execute(strID, Double.toString(latADouble),
+                            Double.toString(lngADouble),
+                            strURL);
+            String result = editLatLng.get();
+            Log.d("11AugV1", "result ==> " + result);
 
 
 
-    } // on MapReady
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    } // Create Map
 
 } // Main Class
