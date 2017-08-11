@@ -1,5 +1,6 @@
 package sdu.mutchima.prisana.wheresdu.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -18,6 +19,7 @@ import org.json.JSONObject;
 import sdu.mutchima.prisana.wheresdu.GetAllUser;
 import sdu.mutchima.prisana.wheresdu.MyAlert;
 import sdu.mutchima.prisana.wheresdu.R;
+import sdu.mutchima.prisana.wheresdu.ServiceActivity;
 
 /**
  * Created by prisana on 7/6/2017.
@@ -129,6 +131,13 @@ public class MainFragment extends Fragment {
             } else if (strPassword.equals(strPasswordTrue)) {
                 //password True
                 Toast.makeText(getActivity(), "Welcome" + strName, Toast.LENGTH_SHORT).show();
+
+
+                //Intent to Service
+                Intent intent = new Intent(getActivity(), ServiceActivity.class);
+                intent.putExtra("ID", strID);
+                getActivity().startActivity(intent);
+
 
             } else {
                 //password False
